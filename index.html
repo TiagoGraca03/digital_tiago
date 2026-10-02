@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tiago Graça | Software Developer</title>
+  <title data-i18n="HEAD_TITLE"></title>
   <!-- Favicon / Ícone do Separador -->
   <link rel="icon" type="image/png" href="img/favicon.png">
   <link rel="stylesheet" href="dist/output.css">
@@ -12,67 +12,92 @@
 
   <!-- 1. HEADER / NAVEGAÇÃO -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
-    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="#" class="text-xl font-bold font-mono tracking-wider text-emerald-400 hover:text-emerald-300 transition-colors">
-        Tiago Graça
-      </a>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-4">
+    
+    <!-- Nome -->
+    <a href="#" class="text-lg sm:text-xl font-bold font-mono tracking-wider text-emerald-400 hover:text-emerald-300 transition-colors">
+      Tiago Graça
+    </a>
+
+    <!-- Navegação (Desktop) -->
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+      <a href="#sobre" data-i18n="NAV_ABOUT" class="hover:text-emerald-400 transition-colors"></a>
+      <a href="#experiencia" data-i18n="NAV_EXPERIENCE" class="hover:text-emerald-400 transition-colors"></a>
+      <a href="#formacao" data-i18n="NAV_EDUCATION" class="hover:text-emerald-400 transition-colors"></a>
+      <a href="#skills" data-i18n="NAV_SKILLS" class="hover:text-emerald-400 transition-colors"></a>
+    </nav>
+
+    <!-- Lado Direito: Botão CV (Desktop) + Idioma -->
+    <div class="flex items-center gap-4 shrink-0">
       
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-        <a href="#sobre" class="hover:text-emerald-400 transition-colors">Sobre</a>
-        <a href="#experiencia" class="hover:text-emerald-400 transition-colors">Experiência</a>
-        <a href="#formacao" class="hover:text-emerald-400 transition-colors">Formação</a>
-        <a href="#skills" class="hover:text-emerald-400 transition-colors">Skills</a>
-      </nav>
+      <!-- Menu Dropdown CV (Desktop) -->
+      <div class="relative hidden md:block">
+        <button 
+          id="btn-cv-desktop"
+          onclick="toggleCvMenu('menu-cv-desktop')" 
+          class="inline-flex items-center justify-center gap-1.5 px-4 py-2 text-sm font-semibold text-slate-950 bg-emerald-400 hover:bg-emerald-300 rounded-lg transition-all shadow-md shadow-emerald-500/10 whitespace-nowrap cursor-pointer"
+        >
+          <span data-i18n="NAV_CV" class="leading-none"></span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
 
-      <div class="flex items-center gap-4">
-        <a href="pdf/cv-tiago-graca.pdf" download class="px-4 py-2 text-sm font-semibold text-slate-950 bg-emerald-400 hover:bg-emerald-300 rounded-lg transition-all shadow-md shadow-emerald-500/10">
-          Descarregar CV
-        </a>
+        <!-- Submenu Desktop -->
+        <div id="menu-cv-desktop" class="hidden absolute right-0 mt-2 w-48 bg-slate-900 border border-slate-800 rounded-lg shadow-xl z-50 overflow-hidden py-1">
+          <a href="cv/tiagograca_cv_pt.pdf" download class="flex items-center gap-2 px-4 py-2 text-xs font-semibold text-slate-200 hover:bg-slate-800 hover:text-emerald-400 transition-colors">
+            <span>🇵🇹</span>
+            <span>Português (PT)</span>
+          </a>
+          <a href="cv/tiagograca_cv_en.pdf" download class="flex items-center gap-2 px-4 py-2 text-xs font-semibold text-slate-200 hover:bg-slate-800 hover:text-emerald-400 transition-colors border-t border-slate-800/60">
+            <span>🇬🇧</span>
+            <span>English (EN)</span>
+          </a>
+        </div>
       </div>
+
+      <!-- Seletor de Idioma -->
+      <div class="flex items-center gap-1 text-xs font-mono bg-slate-900 p-1 rounded-lg border border-slate-800">
+        <button id="btn-pt" onclick="changeLanguage('pt')" class="px-2 py-1 rounded transition-all cursor-pointer hover:text-white">PT</button>
+        <span class="text-slate-600 select-none cursor-default">|</span>
+        <button id="btn-en" onclick="changeLanguage('en')" class="px-2 py-1 rounded transition-all cursor-pointer hover:text-white">EN</button>
+      </div>
+
     </div>
-  </header>
 
-  <main class="pt-20">
+  </div>
+</header>
 
-    <!-- 2. Hero -->
-    <section class="min-h-[85vh] flex flex-col justify-center max-w-6xl mx-auto px-6 py-16">
-      <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12">
+<main class="pt-16 sm:pt-20">
+
+    <!-- 2. HERO -->
+    <section class="min-h-[calc(100svh-4rem-1px)] sm:min-h-[calc(100svh-5rem-1px)] flex flex-col justify-center max-w-6xl mx-auto px-6 pt-6 pb-12 md:py-16">
+      <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-6 md:gap-12">
         
         <!-- Conteúdo do Texto -->
         <div class="flex-1 text-left">
           <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-medium mb-6">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            Disponível para um novo cargo
+            <span data-i18n="HERO_STATUS"></span>
           </div>
 
           <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
-            Olá, sou o Tiago Graça<br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">
-              Software Developer
-            </span>
+            <span data-i18n="HERO_GREETING"></span><br>
+            <span data-i18n="HERO_ROLE" class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200"></span>
           </h1>
 
-          <p class="text-lg sm:text-xl text-slate-400 leading-relaxed mb-8 max-w-2xl">
-            Software Developer com experiência prática em desenvolvimento Full-Stack <strong class="text-slate-200"> PHP, MySQL, JavaScript, HTML e CSS</strong>, entre outras tecnologias web. Focado na escrita de código limpo, eficiente e de fácil manutenção, procuro um ambiente onde possa aprender com colegas experientes, partilhar ideias e crescer como developer.
-          </p>
+          <p class="text-lg sm:text-xl text-slate-400 leading-relaxed mb-8 max-w-2xl" data-i18n="HERO_DESC"></p>
 
           <div class="flex flex-wrap items-center gap-4">
-            <a href="#experiencia" class="px-6 py-3 bg-emerald-400 text-slate-950 font-semibold rounded-lg hover:bg-emerald-300 transition-all">
-              Ver Experiência Profissional
-            </a>
+            <a href="#experiencia" data-i18n="HERO_BTN_EXP" class="px-6 py-3 bg-emerald-400 text-slate-950 font-semibold rounded-lg hover:bg-emerald-300 transition-all"></a>
             <a href="mailto:tiago.graca.dev@gmail.com" class="px-6 py-3 border border-slate-800 text-slate-300 font-semibold rounded-lg hover:bg-slate-900 hover:text-white transition-all">
               tiago.graca.dev@gmail.com
             </a>
           </div>
         </div>
 
-        <!-- Foto de Perfil -->
-        <div class="flex-shrink-0 self-center">
-          <div class="relative group w-60 h-60 sm:w-78 sm:h-78">
-            <!-- Efeito de brilho circular -->
+        <!-- Foto de Perfil (Mais chegada ao topo em mobile) -->
+        <div class="flex-shrink-0 self-center mt-2 md:mt-0">
+          <div class="relative group w-52 h-52 sm:w-78 sm:h-78">
             <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 opacity-40 blur"></div>
-            
-            <!-- Moldura Círculo -->
             <div class="relative w-full h-full rounded-full overflow-hidden border-2 border-emerald-400 bg-slate-900 shadow-xl shadow-emerald-500/10">
               <img 
                 src="img/perfil.png" 
@@ -89,16 +114,12 @@
     <!-- 3. SOBRE MIM -->
     <section id="sobre" class="py-20 border-t border-slate-900 bg-slate-950/50">
       <div class="max-w-6xl mx-auto px-6">
-        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-6">
-          Paixão por tecnologia, raciocínio lógico e trabalho em equipa.
-        </h3>
-        <p class="text-slate-400 leading-relaxed max-w-3xl text-base sm:text-lg mb-6">
-          A minha jornada na programação começou com uma curiosidade genuína sobre como os sistemas funcionam por dentro. Hoje, combino a minha formação académica com a experiência prática de desenvolver software em ambiente empresarial. Valorizo o código bem estruturado, a aprendizagem contínua e a entreajuda no dia a dia de uma equipa de desenvolvimento.
-        </p>
+        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-6" data-i18n="ABOUT_TITLE"></h3>
+        <p class="text-slate-400 leading-relaxed max-w-3xl text-base sm:text-lg mb-6" data-i18n="ABOUT_TEXT"></p>
         <div class="flex flex-wrap gap-6 text-sm font-mono text-slate-300">
-          <div><span class="text-emerald-400">Localização:</span> Aveiro, Portugal</div>
-          <div><span class="text-emerald-400">Telemóvel:</span> (+351) 964 731 191</div>
-          <div><span class="text-emerald-400">Idiomas:</span> Português (Nativo), Inglês (Intermédio)</div>
+          <div><span class="text-emerald-400" data-i18n="ABOUT_LOC_LABEL"></span> Aveiro, Portugal</div>
+          <div><span class="text-emerald-400" data-i18n="ABOUT_PHONE_LABEL"></span> (+351) 964 731 191</div>
+          <div><span class="text-emerald-400" data-i18n="ABOUT_LANGS_LABEL"></span> <span data-i18n="ABOUT_LANGS_VALUE"></span></div>
         </div>
       </div>
     </section>
@@ -106,9 +127,7 @@
     <!-- 4. EXPERIÊNCIA PROFISSIONAL E ESTÁGIOS -->
     <section id="experiencia" class="py-20 border-t border-slate-900">
       <div class="max-w-6xl mx-auto px-6">
-        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-10">
-          Experiência Profissional & Estágios
-        </h3>
+        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-10" data-i18n="EXP_TITLE"></h3>
 
         <div class="relative pl-6 sm:pl-8 border-l border-slate-800 space-y-12">
           
@@ -120,48 +139,41 @@
               <h4 class="text-xl font-bold text-white">
                 Software Developer Full Stack <span class="text-emerald-400">@ Softi9</span>
               </h4>
-              <span class="font-mono text-xs text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20 w-fit">
-                Junho/2025 – Atual
-              </span>
+              <span data-i18n="EXP_SOFTI9_DATE" class="font-mono text-xs text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20 w-fit"></span>
             </div>
 
-            <!-- Descrição e Responsabilidades -->
-            <p class="text-slate-300 text-sm mb-4 leading-relaxed max-w-3xl">
-              Full-Stack developer na equipa <strong class="text-slate-100 font-semibold">CUCo Security Suite</strong>, reponsável pelo desenvolvimento e manutenção contínua de software de gestão e segurança, garantindo elevada usabilidade e desempenho em ambiente de produção.
-            </p>
+            <p class="text-slate-300 text-sm mb-4 leading-relaxed max-w-3xl" data-i18n="EXP_SOFTI9_DESC"></p>
 
             <div class="mb-4 max-w-3xl">
-              <span class="text-xs font-mono font-semibold text-emerald-400 uppercase tracking-wider block mb-2">
-                Principais Responsabilidades & Foco
-              </span>
+              <span data-i18n="EXP_RESP_HEADER" class="text-xs font-mono font-semibold text-emerald-400 uppercase tracking-wider block mb-2"></span>
               <ul class="space-y-2 text-slate-400 text-sm">
                 <li class="flex items-start gap-2">
                   <span class="text-emerald-400 font-bold shrink-0">▹</span>
-                  <span>Desenvolvimento e evolução de funcionalidades full-stack, desde a modelação de dados até à interface final</span>
+                  <span data-i18n="EXP_SOFTI9_R1"></span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-emerald-400 font-bold shrink-0">▹</span>
-                  <span>Conceção de bases de dados e lógica de negócio focadas em escalabilidade, segurança e consistência</span>
+                  <span data-i18n="EXP_SOFTI9_R2"></span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-emerald-400 font-bold shrink-0">▹</span>
-                  <span>Integração contínua entre a plataforma web e os agentes instalados nos dispositivos finais</span>
+                  <span data-i18n="EXP_SOFTI9_R3"></span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-emerald-400 font-bold shrink-0">▹</span>
-                  <span>Construção de interfaces modernas, claras e responsivas com foco na experiência do utilizador (UX/UI)</span>
+                  <span data-i18n="EXP_SOFTI9_R4"></span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-emerald-400 font-bold shrink-0">▹</span>
-                  <span>Manutenção preventiva, resolução de bugs críticos e otimização em ambiente de produção</span>
+                  <span data-i18n="EXP_SOFTI9_R5"></span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-emerald-400 font-bold shrink-0">▹</span>
-                  <span>Adoção de boas práticas de código (Clean Code), garantindo soluções pragmáticas, modulares e de fácil manutenção</span>
+                  <span data-i18n="EXP_SOFTI9_R6"></span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-emerald-400 font-bold shrink-0">▹</span>
-                  <span>Trabalho colaborativo com equipas de design e engenharia na definição e entrega de novos requisitos</span>
+                  <span data-i18n="EXP_SOFTI9_R7"></span>
                 </li>
               </ul>
             </div>
@@ -186,16 +198,12 @@
 
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
               <h4 class="text-lg font-bold text-white">
-                Estágio Curricular - Desenvolvimento Back-end <span class="text-slate-400">@ RevexTech</span>
+                <span data-i18n="EXP_REVEX_TITLE"></span> <span class="text-slate-400">@ RevexTech</span>
               </h4>
-              <span class="font-mono text-xs text-slate-400 bg-slate-900 px-3 py-1 rounded-full border border-slate-800 w-fit">
-                Fevereiro/2024 – Junho/2024
-              </span>
+              <span data-i18n="EXP_REVEX_DATE" class="font-mono text-xs text-slate-400 bg-slate-900 px-3 py-1 rounded-full border border-slate-800 w-fit"></span>
             </div>
 
-            <p class="text-slate-400 text-sm leading-relaxed max-w-3xl">
-              Participação ativa em projetos de desenvolvimento back-end, colaborando na estruturação de lógica de negócio e integrações.
-            </p>
+            <p class="text-slate-400 text-sm leading-relaxed max-w-3xl" data-i18n="EXP_REVEX_DESC"></p>
           </div>
 
           <!-- Prosistav -->
@@ -204,46 +212,38 @@
 
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
               <h4 class="text-lg font-bold text-white">
-                Estágio Curricular <span class="text-slate-400">@ Prosistav</span>
+                <span data-i18n="EXP_PRO_TITLE"></span> <span class="text-slate-400">@ Prosistav</span>
               </h4>
               <span class="font-mono text-xs text-slate-400 bg-slate-900 px-3 py-1 rounded-full border border-slate-800 w-fit">
                 2019 – 2021
               </span>
             </div>
 
-            <p class="text-slate-400 text-sm leading-relaxed max-w-3xl">
-              Eletrificação e montagem de quadros elétricos de comando, desenvolvendo raciocínio lógico e resolução de problemas técnicos.
-            </p>
+            <p class="text-slate-400 text-sm leading-relaxed max-w-3xl" data-i18n="EXP_PRO_DESC"></p>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- 5. Formação académica -->
+    <!-- 5. FORMAÇÃO ACADÉMICA -->
     <section id="formacao" class="py-20 border-t border-slate-900 bg-slate-950/50">
       <div class="max-w-6xl mx-auto px-6">
-        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-10">
-          Formação Académica
-        </h3>
+        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-10" data-i18n="EDU_TITLE"></h3>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
           <!-- Universidade de Aveiro -->
           <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800/80">
-            <span class="text-xs font-mono text-emerald-400">Setembro/2021 – Junho/2024</span>
-            <h4 class="text-lg font-bold text-white mt-1 mb-2">
-              Curso Técnico Superior Profissional de Programação de Sistemas de Informação
-            </h4>
+            <span data-i18n="EDU_UA_DATE" class="text-xs font-mono text-emerald-400"></span>
+            <h4 data-i18n="EDU_UA_COURSE" class="text-lg font-bold text-white mt-1 mb-2"></h4>
             <p class="text-slate-400 text-sm">Universidade de Aveiro</p>
           </div>
 
           <!-- Escola Profissional de Aveiro -->
           <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800/80">
-            <span class="text-xs font-mono text-emerald-400">Setembro/2018 – Junho/2021</span>
-            <h4 class="text-lg font-bold text-white mt-1 mb-2">
-              Curso Profissional Técnico de Eletrónica, Automação e Comando
-            </h4>
+            <span data-i18n="EDU_EPA_DATE" class="text-xs font-mono text-emerald-400"></span>
+            <h4 data-i18n="EDU_EPA_COURSE" class="text-lg font-bold text-white mt-1 mb-2"></h4>
             <p class="text-slate-400 text-sm">Escola Profissional de Aveiro (Pólo de Sever de Vouga)</p>
           </div>
 
@@ -254,16 +254,14 @@
     <!-- 6. SKILLS & TECNOLOGIAS -->
     <section id="skills" class="py-20 border-t border-slate-900">
       <div class="max-w-6xl mx-auto px-6">
-        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-10">
-          Conhecimentos de Programação
-        </h3>
+        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-10" data-i18n="SKILLS_TITLE"></h3>
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
           
           <!-- Backend & DB -->
           <div class="p-6 rounded-xl bg-slate-900/40 border border-slate-800/60">
             <h4 class="font-bold text-white mb-4 flex items-center gap-2">
-              <span class="text-emerald-400">01.</span> Linguagens de Programação
+              <span class="text-emerald-400">01.</span> <span data-i18n="SKILLS_C1"></span>
             </h4>
             <ul class="space-y-2 text-slate-300 text-sm">
               <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> PHP</li>
@@ -276,10 +274,10 @@
             </ul>
           </div>
 
-          <!-- Front-end -->
+          <!-- Frameworks & Ferramentas -->
           <div class="p-6 rounded-xl bg-slate-900/40 border border-slate-800/60">
             <h4 class="font-bold text-white mb-4 flex items-center gap-2">
-              <span class="text-emerald-400">02.</span> Frameworks e Ferramentas
+              <span class="text-emerald-400">02.</span> <span data-i18n="SKILLS_C2"></span>
             </h4>
             <ul class="space-y-2 text-slate-300 text-sm">
               <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> HTMX</li>
@@ -295,14 +293,14 @@
             </ul>
           </div>
 
-          <!-- Idiomas e Outros -->
+          <!-- Idiomas -->
           <div class="p-6 rounded-xl bg-slate-900/40 border border-slate-800/60">
             <h4 class="font-bold text-white mb-4 flex items-center gap-2">
-              <span class="text-emerald-400">03.</span> Idiomas
+              <span class="text-emerald-400">03.</span> <span data-i18n="SKILLS_C3"></span>
             </h4>
             <ul class="space-y-2 text-slate-300 text-sm">
-              <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> Português (Nativo)</li>
-              <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> Inglês (Intermédio)</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> <span data-i18n="SKILLS_LANG_PT"></span></li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400">▹</span> <span data-i18n="SKILLS_LANG_EN"></span></li>
             </ul>
           </div>
 
@@ -322,12 +320,12 @@
                     <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
                 </svg>
                 <span>LinkedIn</span>
-                </a>
+            </a>
             <a href="https://github.com/TiagoGraca03" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 hover:text-emerald-400 transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
                     <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
                 </svg>
-            <span>GitHub</span>
+                <span>GitHub</span>
             </a>
             <a href="mailto:tiago.graca.dev@gmail.com" class="inline-flex items-center gap-1.5 hover:text-emerald-400 transition-colors whitespace-nowrap">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
@@ -335,7 +333,7 @@
                 </svg>
                 tiago.graca.dev@gmail.com
             </a>
-            <span class="inline-flex items-center gap-1.5  text-slate-600 whitespace-nowrap">
+            <span class="inline-flex items-center gap-1.5 text-slate-600 whitespace-nowrap">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone-fill" viewBox="0 0 16 16">
                     <path d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0"/>
                 </svg>
@@ -345,5 +343,80 @@
     </div>
   </footer>
 
+  <!-- Botão Flutuante do CV (FAB) com Submenu em Mobile -->
+  <div class="fixed bottom-6 right-6 z-40 md:hidden">
+    <!-- Submenu Mobile (abre para cima) -->
+    <div id="menu-cv-mobile" class="hidden mb-2 w-44 bg-slate-900 border border-slate-800 rounded-lg shadow-xl overflow-hidden py-1">
+      <a href="cv/tiagograca_cv_pt.pdf" download class="flex items-center gap-2 px-4 py-2 text-xs font-semibold text-slate-200 active:bg-slate-800">
+        <span>🇵🇹</span>
+        <span>Português (PT)</span>
+      </a>
+      <a href="cv/tiagograca_cv_en.pdf" download class="flex items-center gap-2 px-4 py-2 text-xs font-semibold text-slate-200 active:bg-slate-800 border-t border-slate-800/60">
+        <span>🇬🇧</span>
+        <span>English (EN)</span>
+      </a>
+    </div>
+
+    <!-- Botão principal Mobile -->
+    <button 
+      id="btn-cv-mobile"
+      onclick="toggleCvMenu('menu-cv-mobile')"
+      class="flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold text-slate-950 bg-emerald-400 active:bg-emerald-300 rounded-full shadow-lg shadow-emerald-500/20 active:scale-95 cursor-pointer ml-auto"
+      title="Descarregar CV"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download shrink-0 self-center" viewBox="0 0 16 16">
+          <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+          <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+      </svg>
+      <span class="leading-none font-bold">CV</span>
+    </button>
+  </div>
+
+  <!-- Carrega as traduções -->
+  <script src="langs.js"></script>
+
+  <!-- Lógica do Dropdown dos CVs -->
+  <script>
+    function toggleCvMenu(menuId) {
+      const menu = document.getElementById(menuId);
+      const isHidden = menu.classList.contains('hidden');
+      
+      // Fecha todos os menus
+      document.getElementById('menu-cv-desktop').classList.add('hidden');
+      document.getElementById('menu-cv-mobile').classList.add('hidden');
+
+      // Se estava escondido, mostra o selecionado
+      if (isHidden) {
+        menu.classList.remove('hidden');
+      }
+    }
+
+    // Fecha os menus se clicar fora
+    document.addEventListener('click', (event) => {
+      const desktopBtn = document.getElementById('btn-cv-desktop');
+      const desktopMenu = document.getElementById('menu-cv-desktop');
+      const mobileBtn = document.getElementById('btn-cv-mobile');
+      const mobileMenu = document.getElementById('menu-cv-mobile');
+
+      if (desktopMenu && !desktopMenu.contains(event.target) && desktopBtn && !desktopBtn.contains(event.target)) {
+        desktopMenu.classList.add('hidden');
+      }
+
+      if (mobileMenu && !mobileMenu.contains(event.target) && mobileBtn && !mobileBtn.contains(event.target)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+  </script>
 </body>
 </html>
+
+<style>
+    /*Css importante para reponsividade máxima em todas as resoluções :)*/
+@layer base {
+  html {
+    /* 16px até 1920x1080; acima disso cresce proporcionalmente.
+       min(vw, vh) evita que ecrãs ultrawide fiquem com tudo enorme. */
+    font-size: max(16px, min(0.8333vw, 1.4815vh));
+  }
+}
+</style>
