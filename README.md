@@ -1,6 +1,6 @@
-# Tiago Graça · Portfolio
+# Tiago Graça · Digital CV
 
-Welcome to my online portfolio and CV. A personal, responsive, bilingual (PT/EN) dark-themed site.
+Welcome to my online CV. A personal, responsive, bilingual (PT/EN) dark-themed site.
 
 ![Preview](img/preview.png)
 
