@@ -177,8 +177,86 @@
                 </li>
               </ul>
             </div>
+            
+          <span data-i18n="FEAT_HEADER" class="text-xs font-mono font-semibold text-emerald-400 uppercase tracking-wider block mb-2"></span>
+          <div class="space-y-2">
 
-            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
+          <!-- Monitoring -->
+          <details class="group rounded-lg bg-slate-900/60 border border-slate-800/80 p-4">
+            <summary class="cursor-pointer list-none [&::-webkit-details-marker]:hidden font-semibold text-sm text-slate-200 hover:text-emerald-400 transition-colors">
+              <span class="inline-block transition-transform group-open:rotate-90">▹</span> <span data-i18n="FEAT_MON_T"></span>
+            </summary>
+            <p data-i18n="FEAT_MON_D" class="text-slate-400 text-sm leading-relaxed mt-3"></p>
+            <div class="grid sm:grid-cols-2 gap-3 mt-3">
+              <img data-zoom src="img/softi9/monitoring.png" alt="Monitoring: padrões de uso e gráfico" loading="lazy" class="cursor-zoom-in rounded-lg border border-slate-800 w-full aspect-video object-cover">
+              <img data-zoom src="img/softi9/monitoring2.png" alt="Monitoring: aplicações e dispositivos mais usados" loading="lazy" class="cursor-zoom-in rounded-lg border border-slate-800 w-full aspect-video object-cover">
+            </div>
+          </details>
+
+          <!-- Comparador -->
+          <details class="group rounded-lg bg-slate-900/60 border border-slate-800/80 p-4">
+            <summary class="cursor-pointer list-none [&::-webkit-details-marker]:hidden font-semibold text-sm text-slate-200 hover:text-emerald-400 transition-colors">
+              <span class="inline-block transition-transform group-open:rotate-90">▹</span> <span data-i18n="FEAT_CMP_T"></span>
+            </summary>
+            <p data-i18n="FEAT_CMP_D" class="text-slate-400 text-sm leading-relaxed mt-3"></p>
+            <div class="grid sm:grid-cols-2 gap-3 mt-3">
+              <img data-zoom src="img/softi9/comparator.png" alt="Comparador de grupos de clientes" loading="lazy" class="cursor-zoom-in rounded-lg border border-slate-800 w-full aspect-video object-cover">
+            </div>
+          </details>
+
+          <!-- Hardware status -->
+          <details class="group rounded-lg bg-slate-900/60 border border-slate-800/80 p-4">
+            <summary class="cursor-pointer list-none [&::-webkit-details-marker]:hidden font-semibold text-sm text-slate-200 hover:text-emerald-400 transition-colors">
+              <span class="inline-block transition-transform group-open:rotate-90">▹</span> <span data-i18n="FEAT_HW_T"></span>
+            </summary>
+            <p data-i18n="FEAT_HW_D" class="text-slate-400 text-sm leading-relaxed mt-3"></p>
+            <div class="grid sm:grid-cols-2 gap-3 mt-3">
+              <img data-zoom src="img/softi9/hw_view.png" alt="Hardware status com histórico" loading="lazy" class="cursor-zoom-in rounded-lg border border-slate-800 w-full aspect-video object-cover">
+              <img data-zoom src="img/softi9/hw_disks.png" alt="Especificações de hardware: discos" loading="lazy" class="cursor-zoom-in rounded-lg border border-slate-800 w-full aspect-video object-cover">
+            </div>
+          </details>
+
+          <!-- Histórico / diff -->
+          <details class="group rounded-lg bg-slate-900/60 border border-slate-800/80 p-4">
+            <summary class="cursor-pointer list-none [&::-webkit-details-marker]:hidden font-semibold text-sm text-slate-200 hover:text-emerald-400 transition-colors">
+              <span class="inline-block transition-transform group-open:rotate-90">▹</span> <span data-i18n="FEAT_HIST_T"></span>
+            </summary>
+            <p data-i18n="FEAT_HIST_D" class="text-slate-400 text-sm leading-relaxed mt-3"></p>
+            <div class="grid sm:grid-cols-2 gap-3 mt-3">
+              <img data-zoom src="img/softi9/diff_cpu.png" alt="Diferença de alterações de CPU" loading="lazy" class="cursor-zoom-in rounded-lg border border-slate-800 w-full aspect-video object-cover">
+            </div>
+          </details>
+
+          <!-- Calendário da rotina -->
+          <details class="group rounded-lg bg-slate-900/60 border border-slate-800/80 p-4">
+            <summary class="cursor-pointer list-none [&::-webkit-details-marker]:hidden font-semibold text-sm text-slate-200 hover:text-emerald-400 transition-colors">
+              <span class="inline-block transition-transform group-open:rotate-90">▹</span> <span data-i18n="FEAT_ROT_T"></span>
+            </summary>
+            <p data-i18n="FEAT_ROT_D" class="text-slate-400 text-sm leading-relaxed mt-3"></p>
+            <div class="grid sm:grid-cols-2 gap-3 mt-3">
+              <img data-zoom src="img/softi9/routine.png" alt="Modal de edição do calendário da rotina" loading="lazy" class="cursor-zoom-in rounded-lg border border-slate-800 w-full aspect-video object-cover">
+            </div>
+          </details>
+
+          <!-- Configuração e controlo remoto -->
+          <details class="group rounded-lg bg-slate-900/60 border border-slate-800/80 p-4">
+            <summary class="cursor-pointer list-none [&::-webkit-details-marker]:hidden font-semibold text-sm text-slate-200 hover:text-emerald-400 transition-colors">
+              <span class="inline-block transition-transform group-open:rotate-90">▹</span> <span data-i18n="FEAT_REM_T"></span>
+            </summary>
+            <p data-i18n="FEAT_REM_D" class="text-slate-400 text-sm leading-relaxed mt-3"></p>
+          </details>
+
+          <!-- Web History -->
+          <details class="group rounded-lg bg-slate-900/60 border border-slate-800/80 p-4">
+            <summary class="cursor-pointer list-none [&::-webkit-details-marker]:hidden font-semibold text-sm text-slate-200 hover:text-emerald-400 transition-colors">
+              <span class="inline-block transition-transform group-open:rotate-90">▹</span> <span data-i18n="FEAT_WEB_T"></span>
+            </summary>
+            <p data-i18n="FEAT_WEB_D" class="text-slate-400 text-sm leading-relaxed mt-3"></p>
+          </details>
+
+        </div>
+
+            <div class="flex flex-wrap gap-2 mt-6 text-xs font-mono text-slate-400">
               <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">PHP</span>
               <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">MySQL</span>
               <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">JavaScript</span>
@@ -371,6 +449,37 @@
       <span class="leading-none font-bold">CV</span>
     </button>
   </div>
+
+<dialog id="lightbox" class="m-0 p-0 w-full h-full max-w-none max-h-none bg-transparent backdrop:bg-slate-950/90">
+  <div class="w-full h-full flex items-center justify-center p-4 sm:p-8">
+    <button type="button" aria-label="Fechar" class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-slate-900 border border-slate-700 text-slate-200 hover:text-emerald-400 hover:border-emerald-400 transition-colors cursor-pointer">✕</button>
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] rounded-lg border border-slate-800">
+  </div>
+</dialog>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  // Abre ao clicar numa imagem marcada com data-zoom
+  document.addEventListener('click', (e) => {
+    const img = e.target.closest('[data-zoom]');
+    if (!img) return;
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.showModal();
+    document.body.classList.add('overflow-hidden');
+  });
+
+  // Fecha ao clicar no X ou fora da imagem (o Esc fecha de forma nativa)
+  lightbox.addEventListener('click', (e) => {
+    if (e.target !== lightboxImg) lightbox.close();
+  });
+
+  lightbox.addEventListener('close', () => {
+    document.body.classList.remove('overflow-hidden');
+  });
+</script>
 
   <!-- Carrega as traduções -->
   <script src="langs.js"></script>
